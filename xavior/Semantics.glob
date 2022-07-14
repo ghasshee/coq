@@ -1,0 +1,146 @@
+DIGEST 23ed8fd71fde910e95382b77fd00c78b
+FCPS.Semantics
+R15:20 Coq.Strings.String <> <> lib
+R39:42 Coq.Lists.List <> <> lib
+R61:69 CPS.Sequences <> <> lib
+def 149:151 <> var
+R163:168 Coq.Strings.String <> string ind
+def 183:188 <> var_eq
+R206:208 CPS.Semantics <> var def
+binder 200:201 <> v1:1
+binder 203:204 <> v2:2
+R212:212 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R220:224 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R233:233 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R215:217 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R213:214 CPS.Semantics <> v1:1 var
+R218:219 CPS.Semantics <> v2:2 var
+R227:230 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R225:226 CPS.Semantics <> v1:1 var
+R231:232 CPS.Semantics <> v2:2 var
+R238:247 Coq.Strings.String <> string_dec def
+def 263:267 <> const
+R279:281 Coq.Init.Datatypes <> nat ind
+ind 296:299 <> term
+constr 315:317 <> Var
+constr 338:342 <> Const
+constr 365:367 <> Fun
+constr 396:398 <> App
+R324:327 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R321:323 CPS.Semantics <> var def
+R328:331 CPS.Semantics <> term:3 ind
+R351:354 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R346:350 CPS.Semantics <> const def
+R355:358 CPS.Semantics <> term:3 ind
+R374:377 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R371:373 CPS.Semantics <> var def
+R382:385 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R378:381 CPS.Semantics <> term:3 ind
+R386:389 CPS.Semantics <> term:3 ind
+R406:409 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R402:405 CPS.Semantics <> term:3 ind
+R414:417 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R410:413 CPS.Semantics <> term:3 ind
+R418:421 CPS.Semantics <> term:3 ind
+def 437:441 <> subst
+R446:448 CPS.Semantics <> var def
+binder 444:444 <> x:5
+R456:459 CPS.Semantics <> term ind
+binder 452:452 <> b:6
+R456:459 CPS.Semantics <> term ind
+binder 454:454 <> a:7
+R475:478 CPS.Semantics <> term ind
+R491:491 CPS.Semantics <> a:7 var
+R503:505 CPS.Semantics <> Var constr
+R519:524 CPS.Semantics <> var_eq def
+R526:526 CPS.Semantics <> x:5 var
+R542:544 CPS.Semantics <> Var constr
+R535:535 CPS.Semantics <> b:6 var
+R552:556 CPS.Semantics <> Const constr
+R565:569 CPS.Semantics <> Const constr
+R577:579 CPS.Semantics <> Fun constr
+R590:592 CPS.Semantics <> Fun constr
+R600:605 CPS.Semantics <> var_eq def
+R607:607 CPS.Semantics <> x:5 var
+R623:627 CPS.Semantics <> subst:8 def
+R631:631 CPS.Semantics <> b:6 var
+R629:629 CPS.Semantics <> x:5 var
+R640:642 CPS.Semantics <> App constr
+R653:655 CPS.Semantics <> App constr
+R658:662 CPS.Semantics <> subst:8 def
+R666:666 CPS.Semantics <> b:6 var
+R664:664 CPS.Semantics <> x:5 var
+R673:677 CPS.Semantics <> subst:8 def
+R681:681 CPS.Semantics <> b:6 var
+R679:679 CPS.Semantics <> x:5 var
+ind 706:712 <> isvalue
+constr 736:748 <> isvalue_const
+constr 786:796 <> isvalue_fun
+R720:723 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R716:719 CPS.Semantics <> term ind
+binder 759:759 <> c:12
+R764:770 CPS.Semantics <> isvalue:10 ind
+R773:777 CPS.Semantics <> Const constr
+R779:779 CPS.Semantics <> c:12 var
+binder 809:809 <> x:13
+binder 811:811 <> a:14
+R814:820 CPS.Semantics <> isvalue:10 ind
+R823:825 CPS.Semantics <> Fun constr
+R827:827 CPS.Semantics <> x:13 var
+R829:829 CPS.Semantics <> a:14 var
+R852:858 CPS.Semantics <> isvalue ind
+ind 911:913 <> red
+constr 946:953 <> red_beta
+constr 1025:1033 <> red_app_l
+constr 1093:1101 <> red_app_r
+R921:924 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R917:920 CPS.Semantics <> term ind
+R929:932 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R925:928 CPS.Semantics <> term ind
+binder 965:965 <> x:17
+binder 967:967 <> a:18
+binder 969:969 <> v:19
+R981:984 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R972:978 CPS.Semantics <> isvalue ind
+R980:980 CPS.Semantics <> v:19 var
+R985:987 CPS.Semantics <> red:15 ind
+R1008:1012 CPS.Semantics <> subst def
+R1014:1014 CPS.Semantics <> x:17 var
+R1016:1016 CPS.Semantics <> v:19 var
+R1018:1018 CPS.Semantics <> a:18 var
+R990:992 CPS.Semantics <> App constr
+R995:997 CPS.Semantics <> Fun constr
+R999:999 CPS.Semantics <> x:17 var
+R1001:1001 CPS.Semantics <> a:18 var
+R1004:1004 CPS.Semantics <> v:19 var
+binder 1044:1044 <> t:20
+binder 1046:1047 <> t':21
+binder 1049:1049 <> b:22
+R1060:1063 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1052:1054 CPS.Semantics <> red:15 ind
+R1058:1059 CPS.Semantics <> t':21 var
+R1056:1056 CPS.Semantics <> t:20 var
+R1064:1066 CPS.Semantics <> red:15 ind
+R1079:1081 CPS.Semantics <> App constr
+R1083:1084 CPS.Semantics <> t':21 var
+R1086:1086 CPS.Semantics <> b:22 var
+R1069:1071 CPS.Semantics <> App constr
+R1073:1073 CPS.Semantics <> t:20 var
+R1075:1075 CPS.Semantics <> b:22 var
+binder 1112:1112 <> v:23
+binder 1114:1114 <> t:24
+binder 1116:1117 <> t':25
+R1129:1132 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1120:1126 CPS.Semantics <> isvalue ind
+R1128:1128 CPS.Semantics <> v:23 var
+R1141:1144 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1133:1135 CPS.Semantics <> red:15 ind
+R1139:1140 CPS.Semantics <> t':25 var
+R1137:1137 CPS.Semantics <> t:24 var
+R1145:1147 CPS.Semantics <> red:15 ind
+R1159:1161 CPS.Semantics <> App constr
+R1163:1163 CPS.Semantics <> v:23 var
+R1165:1166 CPS.Semantics <> t':25 var
+R1150:1152 CPS.Semantics <> App constr
+R1154:1154 CPS.Semantics <> v:23 var
+R1156:1156 CPS.Semantics <> t:24 var

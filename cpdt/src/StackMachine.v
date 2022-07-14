@@ -102,19 +102,14 @@ Eval simpl in progDenote (compile (Binop Plus (Const 2) (Const 2))) nil.
 (** [= Some (4 :: nil) : option stack] *)
 Eval simpl in progDenote (compile (Binop Times (Binop Plus (Const 2) (Const 2))
   (Const 7))) nil.
-(** [= Some (28 :: nil) : option stack] *)
 
 
 
 Theorem compile_correct : forall e, progDenote (compile e) nil = Some (expDenote e :: nil).
 Abort.
 
-
 Lemma compile_correct' : forall e p s,
   progDenote (compile e ++ p) s = progDenote p (expDenote e :: s).
-
-
-
   induction e.
   intros.
   unfold compile.

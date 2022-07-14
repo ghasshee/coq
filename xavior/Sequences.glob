@@ -1,0 +1,501 @@
+DIGEST d55a05dfa3e7830b11824799e16d74cd
+FCPS.Sequences
+sec 34:42 <> SEQUENCES
+var 57:57 SEQUENCES A
+def 84:86 <> Rel
+R92:95 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R91:91 CPS.Sequences <> SEQUENCES.A var
+R97:100 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R96:96 CPS.Sequences <> SEQUENCES.A var
+ind 156:159 <> star
+constr 185:193 <> star_refl
+constr 225:233 <> star_step
+R165:167 CPS.Sequences <> Rel def
+binder 162:162 <> R:2
+R172:174 CPS.Sequences <> Rel def
+binder 204:204 <> a:5
+R207:210 CPS.Sequences <> star:3 ind
+R216:216 CPS.Sequences <> a:5 var
+R214:214 CPS.Sequences <> a:5 var
+R212:212 CPS.Sequences <> R:2 var
+binder 244:244 <> a:6
+binder 246:246 <> b:7
+binder 248:248 <> c:8
+R256:259 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R251:251 CPS.Sequences <> R:2 var
+R253:253 CPS.Sequences <> a:6 var
+R255:255 CPS.Sequences <> b:7 var
+R270:273 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R260:263 CPS.Sequences <> star:3 ind
+R269:269 CPS.Sequences <> c:8 var
+R267:267 CPS.Sequences <> b:7 var
+R265:265 CPS.Sequences <> R:2 var
+R274:277 CPS.Sequences <> star:3 ind
+R283:283 CPS.Sequences <> c:8 var
+R281:281 CPS.Sequences <> a:6 var
+R279:279 CPS.Sequences <> R:2 var
+prf 341:348 <> star_one
+R362:364 CPS.Sequences <> Rel def
+binder 360:360 <> R:9
+binder 367:367 <> a:10
+binder 369:369 <> b:11
+R377:380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R372:372 CPS.Sequences <> R:9 var
+R374:374 CPS.Sequences <> a:10 var
+R376:376 CPS.Sequences <> b:11 var
+R381:384 CPS.Sequences <> star ind
+R390:390 CPS.Sequences <> b:11 var
+R388:388 CPS.Sequences <> a:10 var
+R386:386 CPS.Sequences <> R:9 var
+prf 470:479 <> star_trans
+R493:495 CPS.Sequences <> Rel def
+binder 491:491 <> R:12
+binder 498:498 <> a:13
+binder 500:500 <> b:14
+R513:539 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R503:506 CPS.Sequences <> star ind
+R512:512 CPS.Sequences <> b:14 var
+R510:510 CPS.Sequences <> a:13 var
+R508:508 CPS.Sequences <> R:12 var
+binder 547:547 <> c:15
+R560:563 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R550:553 CPS.Sequences <> star ind
+R559:559 CPS.Sequences <> c:15 var
+R557:557 CPS.Sequences <> b:14 var
+R555:555 CPS.Sequences <> R:12 var
+R564:567 CPS.Sequences <> star ind
+R573:573 CPS.Sequences <> c:15 var
+R571:571 CPS.Sequences <> a:13 var
+R569:569 CPS.Sequences <> R:12 var
+ind 672:675 <> plus
+constr 702:710 <> plus_left
+R681:683 CPS.Sequences <> Rel def
+binder 678:678 <> R:16
+R688:690 CPS.Sequences <> Rel def
+binder 721:721 <> a:19
+binder 723:723 <> b:20
+binder 725:725 <> c:21
+R733:736 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R728:728 CPS.Sequences <> R:16 var
+R730:730 CPS.Sequences <> a:19 var
+R732:732 CPS.Sequences <> b:20 var
+R747:750 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R737:740 CPS.Sequences <> star ind
+R746:746 CPS.Sequences <> c:21 var
+R744:744 CPS.Sequences <> b:20 var
+R742:742 CPS.Sequences <> R:16 var
+R751:754 CPS.Sequences <> plus:17 ind
+R760:760 CPS.Sequences <> c:21 var
+R758:758 CPS.Sequences <> a:19 var
+R756:756 CPS.Sequences <> R:16 var
+prf 818:825 <> plus_one
+R839:841 CPS.Sequences <> Rel def
+binder 837:837 <> R:22
+binder 844:844 <> a:23
+binder 846:846 <> b:24
+R854:857 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R849:849 CPS.Sequences <> R:22 var
+R851:851 CPS.Sequences <> a:23 var
+R853:853 CPS.Sequences <> b:24 var
+R858:861 CPS.Sequences <> plus ind
+R867:867 CPS.Sequences <> b:24 var
+R865:865 CPS.Sequences <> a:23 var
+R863:863 CPS.Sequences <> R:22 var
+prf 914:922 <> plus_star
+R936:938 CPS.Sequences <> Rel def
+binder 934:934 <> R:25
+binder 941:941 <> a:26
+binder 943:943 <> b:27
+R956:959 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R946:949 CPS.Sequences <> plus ind
+R955:955 CPS.Sequences <> b:27 var
+R953:953 CPS.Sequences <> a:26 var
+R951:951 CPS.Sequences <> R:25 var
+R960:963 CPS.Sequences <> star ind
+R969:969 CPS.Sequences <> b:27 var
+R967:967 CPS.Sequences <> a:26 var
+R965:965 CPS.Sequences <> R:25 var
+prf 1034:1048 <> plus_star_trans
+R1062:1064 CPS.Sequences <> Rel def
+binder 1060:1060 <> R:28
+binder 1067:1067 <> a:29
+binder 1069:1069 <> b:30
+binder 1071:1071 <> c:31
+R1084:1087 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1074:1077 CPS.Sequences <> plus ind
+R1083:1083 CPS.Sequences <> b:30 var
+R1081:1081 CPS.Sequences <> a:29 var
+R1079:1079 CPS.Sequences <> R:28 var
+R1098:1101 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1088:1091 CPS.Sequences <> star ind
+R1097:1097 CPS.Sequences <> c:31 var
+R1095:1095 CPS.Sequences <> b:30 var
+R1093:1093 CPS.Sequences <> R:28 var
+R1102:1105 CPS.Sequences <> plus ind
+R1111:1111 CPS.Sequences <> c:31 var
+R1109:1109 CPS.Sequences <> a:29 var
+R1107:1107 CPS.Sequences <> R:28 var
+prf 1172:1186 <> star_plus_trans
+R1200:1202 CPS.Sequences <> Rel def
+binder 1198:1198 <> R:32
+binder 1205:1205 <> a:33
+binder 1207:1207 <> b:34
+binder 1209:1209 <> c:35
+R1222:1225 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1212:1215 CPS.Sequences <> star ind
+R1221:1221 CPS.Sequences <> b:34 var
+R1219:1219 CPS.Sequences <> a:33 var
+R1217:1217 CPS.Sequences <> R:32 var
+R1236:1239 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1226:1229 CPS.Sequences <> plus ind
+R1235:1235 CPS.Sequences <> c:35 var
+R1233:1233 CPS.Sequences <> b:34 var
+R1231:1231 CPS.Sequences <> R:32 var
+R1240:1243 CPS.Sequences <> plus ind
+R1249:1249 CPS.Sequences <> c:35 var
+R1247:1247 CPS.Sequences <> a:33 var
+R1245:1245 CPS.Sequences <> R:32 var
+prf 1328:1337 <> plus_trans
+R1351:1353 CPS.Sequences <> Rel def
+binder 1349:1349 <> R:36
+binder 1356:1356 <> a:37
+binder 1358:1358 <> b:38
+binder 1360:1360 <> c:39
+R1373:1376 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1363:1366 CPS.Sequences <> plus ind
+R1372:1372 CPS.Sequences <> b:38 var
+R1370:1370 CPS.Sequences <> a:37 var
+R1368:1368 CPS.Sequences <> R:36 var
+R1387:1390 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1377:1380 CPS.Sequences <> plus ind
+R1386:1386 CPS.Sequences <> c:39 var
+R1384:1384 CPS.Sequences <> b:38 var
+R1382:1382 CPS.Sequences <> R:36 var
+R1391:1394 CPS.Sequences <> plus ind
+R1400:1400 CPS.Sequences <> c:39 var
+R1398:1398 CPS.Sequences <> a:37 var
+R1396:1396 CPS.Sequences <> R:36 var
+R1427:1441 CPS.Sequences <> plus_star_trans thm
+R1427:1441 CPS.Sequences <> plus_star_trans thm
+R1467:1475 CPS.Sequences <> plus_star thm
+R1467:1475 CPS.Sequences <> plus_star thm
+prf 1493:1502 <> plus_right
+R1516:1518 CPS.Sequences <> Rel def
+binder 1514:1514 <> R:40
+binder 1521:1521 <> a:41
+binder 1523:1523 <> b:42
+binder 1525:1525 <> c:43
+R1538:1541 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1528:1531 CPS.Sequences <> star ind
+R1537:1537 CPS.Sequences <> b:42 var
+R1535:1535 CPS.Sequences <> a:41 var
+R1533:1533 CPS.Sequences <> R:40 var
+R1547:1550 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1542:1542 CPS.Sequences <> R:40 var
+R1544:1544 CPS.Sequences <> b:42 var
+R1546:1546 CPS.Sequences <> c:43 var
+R1551:1554 CPS.Sequences <> plus ind
+R1560:1560 CPS.Sequences <> c:43 var
+R1558:1558 CPS.Sequences <> a:41 var
+R1556:1556 CPS.Sequences <> R:40 var
+def 1739:1743 <> irred
+R1750:1752 CPS.Sequences <> Rel def
+binder 1746:1746 <> R:44
+binder 1755:1755 <> a:45
+binder 1774:1774 <> b:46
+R1777:1778 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1784:1784 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1779:1779 CPS.Sequences <> R:44 var
+R1781:1781 CPS.Sequences <> a:45 var
+R1783:1783 CPS.Sequences <> b:46 var
+ind 1804:1809 <> infseq
+constr 1840:1850 <> infseq_step
+R1814:1816 CPS.Sequences <> Rel def
+binder 1812:1812 <> R:47
+R1822:1825 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1821:1821 CPS.Sequences <> SEQUENCES.A var
+binder 1861:1861 <> a:50
+binder 1863:1863 <> b:51
+R1880:1883 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1875:1875 CPS.Sequences <> R:47 var
+R1877:1877 CPS.Sequences <> a:50 var
+R1879:1879 CPS.Sequences <> b:51 var
+R1894:1897 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1884:1889 CPS.Sequences <> infseq:48 ind
+R1893:1893 CPS.Sequences <> b:51 var
+R1891:1891 CPS.Sequences <> R:47 var
+R1898:1903 CPS.Sequences <> infseq:48 ind
+R1907:1907 CPS.Sequences <> a:50 var
+R1905:1905 CPS.Sequences <> R:47 var
+prf 1921:1948 <> infseq_coinduction_principle
+R1967:1969 CPS.Sequences <> Rel def
+binder 1965:1965 <> R:52
+R1977:1978 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1976:1976 CPS.Sequences <> SEQUENCES.A var
+binder 1973:1973 <> X:53
+R2037:2037 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2077:2120 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2045:2045 <> a:54
+R2051:2054 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2048:2048 CPS.Sequences <> X:53 var
+R2050:2050 CPS.Sequences <> a:54 var
+R2055:2061 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2063:2064 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2062:2062 <> b:55
+R2070:2073 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2065:2065 CPS.Sequences <> R:52 var
+R2067:2067 CPS.Sequences <> a:54 var
+R2069:2069 CPS.Sequences <> b:55 var
+R2074:2074 CPS.Sequences <> X:53 var
+R2076:2076 CPS.Sequences <> b:55 var
+binder 2128:2128 <> a:56
+R2134:2137 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2131:2131 CPS.Sequences <> X:53 var
+R2133:2133 CPS.Sequences <> a:56 var
+R2138:2143 CPS.Sequences <> infseq coind
+R2147:2147 CPS.Sequences <> a:56 var
+R2145:2145 CPS.Sequences <> R:52 var
+R2239:2249 CPS.Sequences <> infseq_step constr
+R2239:2249 CPS.Sequences <> infseq_step constr
+prf 2287:2316 <> infseq_coinduction_principle_2
+R2334:2336 CPS.Sequences <> Rel def
+binder 2332:2332 <> R:57
+R2344:2345 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2343:2343 CPS.Sequences <> SEQUENCES.A var
+binder 2340:2340 <> X:58
+R2357:2357 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2402:2411 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2365:2365 <> a:59
+R2371:2374 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2368:2368 CPS.Sequences <> X:58 var
+R2370:2370 CPS.Sequences <> a:59 var
+R2375:2381 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2383:2384 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2382:2382 <> b:60
+R2395:2398 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2385:2388 CPS.Sequences <> plus ind
+R2394:2394 CPS.Sequences <> b:60 var
+R2392:2392 CPS.Sequences <> a:59 var
+R2390:2390 CPS.Sequences <> R:57 var
+R2399:2399 CPS.Sequences <> X:58 var
+R2401:2401 CPS.Sequences <> b:60 var
+binder 2419:2419 <> a:61
+R2425:2428 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2422:2422 CPS.Sequences <> X:58 var
+R2424:2424 CPS.Sequences <> a:61 var
+R2429:2434 CPS.Sequences <> infseq coind
+R2438:2438 CPS.Sequences <> a:61 var
+R2436:2436 CPS.Sequences <> R:57 var
+binder 2531:2531 <> a:62
+R2536:2542 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2544:2545 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2543:2543 <> b:63
+R2556:2559 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2546:2549 CPS.Sequences <> star ind
+R2555:2555 CPS.Sequences <> b:63 var
+R2553:2553 CPS.Sequences <> a:62 var
+R2562:2562 CPS.Sequences <> b:63 var
+R2480:2507 CPS.Sequences <> infseq_coinduction_principle thm
+binder 2531:2531 <> a:64
+R2536:2542 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2544:2545 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2543:2543 <> b:65
+R2556:2559 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2546:2549 CPS.Sequences <> star ind
+R2555:2555 CPS.Sequences <> b:65 var
+R2553:2553 CPS.Sequences <> a:64 var
+R2562:2562 CPS.Sequences <> b:65 var
+R2480:2507 CPS.Sequences <> infseq_coinduction_principle thm
+prf 2983:3015 <> infseq_alternate_characterization
+R3036:3038 CPS.Sequences <> Rel def
+binder 3032:3032 <> R:66
+binder 3041:3041 <> a:67
+R3044:3044 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3084:3092 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3052:3052 <> b:68
+R3065:3068 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3055:3058 CPS.Sequences <> star ind
+R3064:3064 CPS.Sequences <> b:68 var
+R3062:3062 CPS.Sequences <> a:67 var
+R3060:3060 CPS.Sequences <> R:66 var
+R3069:3075 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3077:3078 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3076:3076 <> c:69
+R3079:3079 CPS.Sequences <> R:66 var
+R3081:3081 CPS.Sequences <> b:68 var
+R3083:3083 CPS.Sequences <> c:69 var
+R3093:3098 CPS.Sequences <> infseq coind
+R3102:3102 CPS.Sequences <> a:67 var
+R3100:3100 CPS.Sequences <> R:66 var
+R3136:3163 CPS.Sequences <> infseq_coinduction_principle thm
+R3136:3163 CPS.Sequences <> infseq_coinduction_principle thm
+R3432:3440 Coq.Logic.Classical <> <> lib
+prf 3453:3468 <> infseq_or_finseq
+R3488:3490 CPS.Sequences <> Rel def
+binder 3484:3484 <> R:70
+binder 3493:3493 <> a:71
+R3506:3509 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R3496:3501 CPS.Sequences <> infseq coind
+R3505:3505 CPS.Sequences <> a:71 var
+R3503:3503 CPS.Sequences <> R:70 var
+R3510:3516 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3518:3519 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3517:3517 <> b:72
+R3530:3533 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3520:3523 CPS.Sequences <> star ind
+R3529:3529 CPS.Sequences <> b:72 var
+R3527:3527 CPS.Sequences <> a:71 var
+R3525:3525 CPS.Sequences <> R:70 var
+R3534:3538 CPS.Sequences <> irred def
+R3542:3542 CPS.Sequences <> b:72 var
+R3540:3540 CPS.Sequences <> R:70 var
+R3584:3590 Coq.Logic.Classical_Prop <> classic prfax
+R3608:3614 Coq.Logic.Classical_Prop <> classic prfax
+binder 3624:3624 <> b:73
+R3637:3640 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3627:3630 CPS.Sequences <> star ind
+R3636:3636 CPS.Sequences <> b:73 var
+R3641:3647 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3649:3650 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3648:3648 <> c:74
+R3653:3653 CPS.Sequences <> b:73 var
+R3655:3655 CPS.Sequences <> c:74 var
+R3608:3614 Coq.Logic.Classical_Prop <> classic prfax
+binder 3624:3624 <> b:75
+R3637:3640 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3627:3630 CPS.Sequences <> star ind
+R3636:3636 CPS.Sequences <> b:75 var
+R3641:3647 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3649:3650 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3648:3648 <> c:76
+R3653:3653 CPS.Sequences <> b:75 var
+R3655:3655 CPS.Sequences <> c:76 var
+R3683:3715 CPS.Sequences <> infseq_alternate_characterization thm
+R3683:3715 CPS.Sequences <> infseq_alternate_characterization thm
+R3747:3760 Coq.Logic.Classical_Pred_Type <> not_all_ex_not thm
+R3776:3789 Coq.Logic.Classical_Pred_Type <> not_all_ex_not thm
+R3776:3789 Coq.Logic.Classical_Pred_Type <> not_all_ex_not thm
+R3819:3830 Coq.Logic.Classical_Prop <> imply_to_and thm
+R3846:3857 Coq.Logic.Classical_Prop <> imply_to_and thm
+R3846:3857 Coq.Logic.Classical_Prop <> imply_to_and thm
+R3939:3943 CPS.Sequences <> irred def
+sec 4050:4060 SEQUENCES DETERMINISM
+var 4077:4077 SEQUENCES.DETERMINISM R
+R4082:4085 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4081:4081 CPS.Sequences <> SEQUENCES.A var
+R4087:4090 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4086:4086 CPS.Sequences <> SEQUENCES.A var
+var 4113:4120 SEQUENCES.DETERMINISM R_determ
+binder 4131:4131 <> a:78
+binder 4133:4133 <> b:79
+binder 4135:4135 <> c:80
+R4143:4146 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4138:4138 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4142:4142 CPS.Sequences <> b:79 var
+R4140:4140 CPS.Sequences <> a:78 var
+R4152:4155 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4147:4147 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4151:4151 CPS.Sequences <> c:80 var
+R4149:4149 CPS.Sequences <> a:78 var
+R4157:4159 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4156:4156 CPS.Sequences <> b:79 var
+R4160:4160 CPS.Sequences <> c:80 var
+prf 4221:4233 <> star_star_inv
+binder 4251:4251 <> a:82
+binder 4253:4253 <> b:83
+R4266:4269 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4256:4259 CPS.Sequences <> star ind
+R4265:4265 CPS.Sequences <> b:83 var
+R4263:4263 CPS.Sequences <> a:82 var
+R4261:4261 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+binder 4277:4277 <> c:84
+R4290:4293 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4280:4283 CPS.Sequences <> star ind
+R4289:4289 CPS.Sequences <> c:84 var
+R4287:4287 CPS.Sequences <> a:82 var
+R4285:4285 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4304:4307 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R4294:4297 CPS.Sequences <> star ind
+R4303:4303 CPS.Sequences <> c:84 var
+R4301:4301 CPS.Sequences <> b:83 var
+R4299:4299 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4308:4311 CPS.Sequences <> star ind
+R4317:4317 CPS.Sequences <> b:83 var
+R4315:4315 CPS.Sequences <> c:84 var
+R4313:4313 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4493:4493 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4493:4493 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4519:4526 CPS.Sequences <> SEQUENCES.DETERMINISM.R_determ var
+R4519:4526 CPS.Sequences <> SEQUENCES.DETERMINISM.R_determ var
+prf 4610:4622 <> finseq_unique
+binder 4640:4640 <> a:85
+binder 4642:4642 <> b:86
+binder 4644:4645 <> b':87
+R4665:4669 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4655:4658 CPS.Sequences <> star ind
+R4664:4664 CPS.Sequences <> b:86 var
+R4662:4662 CPS.Sequences <> a:85 var
+R4660:4660 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4679:4690 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4670:4674 CPS.Sequences <> irred def
+R4678:4678 CPS.Sequences <> b:86 var
+R4676:4676 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4702:4705 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4691:4694 CPS.Sequences <> star ind
+R4700:4701 CPS.Sequences <> b':87 var
+R4698:4698 CPS.Sequences <> a:85 var
+R4696:4696 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4716:4725 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4706:4710 CPS.Sequences <> irred def
+R4714:4715 CPS.Sequences <> b':87 var
+R4712:4712 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4727:4729 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4726:4726 CPS.Sequences <> b:86 var
+R4730:4731 CPS.Sequences <> b':87 var
+R4778:4790 CPS.Sequences <> star_star_inv thm
+R4778:4790 CPS.Sequences <> star_star_inv thm
+prf 4931:4945 <> infseq_star_inv
+binder 4963:4963 <> a:88
+binder 4965:4965 <> b:89
+R4978:4981 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4968:4971 CPS.Sequences <> star ind
+R4977:4977 CPS.Sequences <> b:89 var
+R4975:4975 CPS.Sequences <> a:88 var
+R4973:4973 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4992:4995 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4982:4987 CPS.Sequences <> infseq coind
+R4991:4991 CPS.Sequences <> a:88 var
+R4989:4989 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R4996:5001 CPS.Sequences <> infseq coind
+R5005:5005 CPS.Sequences <> b:89 var
+R5003:5003 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R5125:5127 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5125:5127 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5149:5156 CPS.Sequences <> SEQUENCES.DETERMINISM.R_determ var
+R5149:5156 CPS.Sequences <> SEQUENCES.DETERMINISM.R_determ var
+prf 5226:5243 <> infseq_finseq_excl
+binder 5261:5261 <> a:90
+binder 5263:5263 <> b:91
+R5277:5280 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5267:5270 CPS.Sequences <> star ind
+R5276:5276 CPS.Sequences <> b:91 var
+R5274:5274 CPS.Sequences <> a:90 var
+R5272:5272 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R5290:5293 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5281:5285 CPS.Sequences <> irred def
+R5289:5289 CPS.Sequences <> b:91 var
+R5287:5287 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R5304:5307 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5294:5299 CPS.Sequences <> infseq coind
+R5303:5303 CPS.Sequences <> a:90 var
+R5301:5301 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R5308:5312 Coq.Init.Logic <> False ind
+R5356:5360 CPS.Sequences <> irred def
+R5386:5391 CPS.Sequences <> infseq coind
+R5393:5393 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R5386:5391 CPS.Sequences <> infseq coind
+R5393:5393 CPS.Sequences <> SEQUENCES.DETERMINISM.R var
+R5415:5429 CPS.Sequences <> infseq_star_inv thm
+R5415:5429 CPS.Sequences <> infseq_star_inv thm
+R5512:5522 CPS.Sequences SEQUENCES.DETERMINISM <> sec
+R5533:5541 CPS.Sequences SEQUENCES <> sec

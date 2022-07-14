@@ -1,0 +1,8 @@
+DIGEST 236d7929955dba949e50207cecbada3b
+Fhaskell
+R15:24 Coq.extraction.Extraction <> <> lib
+R77:94 Coq.Strings.String <> <> lib
+R114:127 Coq.Lists.List <> <> lib
+R147:161 Coq.Arith.Arith <> <> lib
+R180:194 Coq.Arith.EqNat <> <> lib
+R214:218 lexer <> <> lib

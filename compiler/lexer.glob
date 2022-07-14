@@ -1,0 +1,208 @@
+DIGEST a5f6195a425e6ddfac454c603d73fa19
+Flexer
+R93:110 Coq.Strings.String <> <> lib
+R128:144 Coq.Strings.Ascii <> <> lib
+R163:177 Coq.Arith.Arith <> <> lib
+R195:209 Coq.Arith.EqNat <> <> lib
+R227:240 Coq.Lists.List <> <> lib
+def 310:316 <> isWhite
+R321:325 Coq.Strings.Ascii <> ascii ind
+R330:333 Coq.Init.Datatypes <> bool ind
+R351:362 Coq.Strings.Ascii <> nat_of_ascii def
+R364:364 lexer <> c var
+R374:376 Coq.Init.Datatypes <> orb def
+R433:435 Coq.Init.Datatypes <> orb def
+R464:470 Coq.Arith.EqNat <> beq_nat syndef
+R472:472 lexer <> n var
+R437:443 Coq.Arith.EqNat <> beq_nat syndef
+R445:445 lexer <> n var
+R379:381 Coq.Init.Datatypes <> orb def
+R410:416 Coq.Arith.EqNat <> beq_nat syndef
+R418:418 lexer <> n var
+R383:389 Coq.Arith.EqNat <> beq_nat syndef
+R391:391 lexer <> n var
+R508:510 Coq.Arith.Compare_dec <> leb syndef
+not 492:492 <> :nat_scope:x_'<=?'_x
+def 579:590 <> isLowerAlpha
+R595:599 Coq.Strings.Ascii <> ascii ind
+R604:607 Coq.Init.Datatypes <> bool ind
+R626:637 Coq.Strings.Ascii <> nat_of_ascii def
+R639:639 lexer <> c var
+R649:652 Coq.Init.Datatypes <> andb def
+R667:671 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R666:666 lexer <> n var
+R657:661 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R662:662 lexer <> n var
+def 691:697 <> isAlpha
+R702:706 Coq.Strings.Ascii <> ascii ind
+R711:714 Coq.Init.Datatypes <> bool ind
+R733:744 Coq.Strings.Ascii <> nat_of_ascii def
+R746:746 lexer <> c var
+R756:758 Coq.Init.Datatypes <> orb def
+R796:799 Coq.Init.Datatypes <> andb def
+R813:816 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R812:812 lexer <> n var
+R803:807 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R808:808 lexer <> n var
+R761:764 Coq.Init.Datatypes <> andb def
+R778:781 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R777:777 lexer <> n var
+R768:772 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R773:773 lexer <> n var
+def 836:842 <> isDigit
+R847:851 Coq.Strings.Ascii <> ascii ind
+R856:859 Coq.Init.Datatypes <> bool ind
+R878:889 Coq.Strings.Ascii <> nat_of_ascii def
+R891:891 lexer <> c var
+R901:904 Coq.Init.Datatypes <> andb def
+R919:923 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R918:918 lexer <> n var
+R909:913 Coq.Arith.PeanoNat <> :nat_scope:x_'<=?'_x not
+R914:914 lexer <> n var
+ind 941:948 <> chartype
+constr 953:957 <> white
+constr 961:965 <> alpha
+constr 969:973 <> digit
+constr 977:981 <> other
+R958:958 lexer <> chartype ind
+R966:966 lexer <> chartype ind
+R974:974 lexer <> chartype ind
+R982:982 lexer <> chartype ind
+def 998:1009 <> classifyChar
+R1014:1018 Coq.Strings.Ascii <> ascii ind
+R1023:1030 lexer <> chartype ind
+R1043:1049 lexer <> isWhite def
+R1051:1051 lexer <> c var
+R1086:1092 lexer <> isAlpha def
+R1094:1094 lexer <> c var
+R1128:1134 lexer <> isDigit def
+R1136:1136 lexer <> c var
+R1176:1180 lexer <> other constr
+R1152:1156 lexer <> digit constr
+R1110:1114 lexer <> alpha constr
+R1067:1071 lexer <> white constr
+def 1194:1207 <> list_of_string
+R1214:1219 Coq.Strings.String <> string ind
+R1224:1227 Coq.Init.Datatypes <> list ind
+R1229:1233 Coq.Strings.Ascii <> ascii ind
+R1249:1249 lexer <> s var
+R1263:1273 Coq.Strings.String <> EmptyString constr
+R1280:1281 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R1289:1294 Coq.Strings.String <> String constr
+R1307:1311 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1328:1328 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1312:1325 lexer <> list_of_string def
+R1327:1327 lexer <> s var
+def 1351:1364 <> string_of_list
+R1372:1375 Coq.Init.Datatypes <> list ind
+R1377:1381 Coq.Strings.Ascii <> ascii ind
+R1386:1391 Coq.Strings.String <> string ind
+R1401:1410 Coq.Lists.List <> fold_right def
+R1431:1432 lexer <> xs var
+R1419:1429 Coq.Strings.String <> EmptyString constr
+R1412:1417 Coq.Strings.String <> String constr
+def 1448:1452 <> token
+R1457:1462 Coq.Strings.String <> string ind
+def 1477:1491 <> tokenize_helper
+R1500:1507 lexer <> chartype ind
+R1520:1523 Coq.Init.Datatypes <> list ind
+R1525:1529 Coq.Strings.Ascii <> ascii ind
+R1534:1537 Coq.Init.Datatypes <> list ind
+R1540:1543 Coq.Init.Datatypes <> list ind
+R1545:1549 Coq.Strings.Ascii <> ascii ind
+R1576:1578 lexer <> acc var
+R1592:1593 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R1602:1603 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R1613:1614 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1622:1622 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R1630:1630 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R1623:1625 Coq.Lists.List <> rev def
+R1627:1629 lexer <> acc var
+R1654:1655 lexer <> xs var
+R1669:1670 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R1683:1684 lexer <> tk var
+R1694:1695 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1718:1729 lexer <> classifyChar def
+R1713:1715 lexer <> cls var
+R1771:1774 Coq.Init.Datatypes <> :list_scope:x_'++'_x not
+R1769:1770 lexer <> tk var
+R1780:1784 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1813:1813 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1775:1775 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R1779:1779 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R1785:1799 lexer <> tokenize_helper def
+R1807:1808 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R1801:1805 lexer <> other constr
+R1845:1848 Coq.Init.Datatypes <> :list_scope:x_'++'_x not
+R1843:1844 lexer <> tk var
+R1854:1858 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1887:1887 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1849:1849 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R1853:1853 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R1859:1873 lexer <> tokenize_helper def
+R1881:1882 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R1875:1879 lexer <> other constr
+R1902:1906 lexer <> white constr
+R1919:1923 Coq.Init.Datatypes <> :list_scope:x_'++'_x not
+R1958:1958 Coq.Init.Datatypes <> :list_scope:x_'++'_x not
+R1917:1918 lexer <> tk var
+R1924:1938 lexer <> tokenize_helper def
+R1948:1949 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R1950:1952 lexer <> acc var
+R1940:1944 lexer <> alpha constr
+R1971:1975 lexer <> alpha constr
+R1977:1981 lexer <> alpha constr
+R1988:2002 lexer <> tokenize_helper def
+R2012:2013 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R2014:2016 lexer <> acc var
+R2004:2008 lexer <> alpha constr
+R2034:2038 lexer <> digit constr
+R2040:2044 lexer <> digit constr
+R2051:2065 lexer <> tokenize_helper def
+R2075:2076 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R2077:2079 lexer <> acc var
+R2067:2071 lexer <> digit constr
+R2097:2101 lexer <> other constr
+R2103:2107 lexer <> other constr
+R2114:2128 lexer <> tokenize_helper def
+R2138:2139 Coq.Init.Datatypes <> :list_scope:x_'::'_x not
+R2140:2142 lexer <> acc var
+R2130:2134 lexer <> other constr
+R2179:2183 Coq.Init.Datatypes <> :list_scope:x_'++'_x not
+R2210:2210 Coq.Init.Datatypes <> :list_scope:x_'++'_x not
+R2177:2178 lexer <> tk var
+R2184:2198 lexer <> tokenize_helper def
+R2203:2203 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+R2205:2205 Coq.Lists.List ListNotations :list_scope:'['_x_']' not
+def 2253:2260 <> tokenize
+R2265:2270 Coq.Strings.String <> string ind
+R2275:2278 Coq.Init.Datatypes <> list ind
+R2280:2285 Coq.Strings.String <> string ind
+R2295:2297 Coq.Lists.List <> map def
+R2315:2329 lexer <> tokenize_helper def
+R2341:2354 lexer <> list_of_string def
+R2356:2356 lexer <> s var
+R2337:2338 Coq.Lists.List ListNotations :list_scope:'['_']' not
+R2331:2335 lexer <> white constr
+R2299:2312 lexer <> string_of_list def
+def 2371:2382 <> tokenize_ex1
+R2427:2434 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2386:2393 lexer <> tokenize def
+R2435:2435 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2441:2442 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2447:2448 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2453:2454 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2458:2459 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2465:2466 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2470:2471 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2475:2476 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2480:2481 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2485:2486 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2490:2491 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2495:2496 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2500:2501 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2505:2506 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2510:2510 Coq.Lists.List ListNotations :list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+def 2541:2544 <> hoge
+R2549:2556 lexer <> tokenize def
+R2578:2581 lexer <> hoge def

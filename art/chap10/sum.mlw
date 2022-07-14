@@ -1,0 +1,11 @@
+parameter v : int ref 
+
+let rec sum (x:int) : unit {variant x} = 
+    { 0 <= x } 
+    if x = 0 then 
+        v:= 0 
+        else begin 
+            (sum (x-1)); v := x + !v
+            end
+            {3*v = x*(x+1)}
+
