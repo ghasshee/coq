@@ -183,32 +183,12 @@ Fixpoint sort l :=
   | n :: l' => insert n (sort l')
   | []      => []                 end. 
 
-
 Theorem insert_perm_aux : forall n l, perm nat (n::l) (insert n l). 
-Proof. 
-  induction l; simpl.   
-  + constructor.  
-  + destruct(nat_le_bool n a).  
-    * constructor.  
-       
+Proof. Admitted. 
 
 
 Theorem insert_perm : forall l l', perm nat l l' -> forall n, perm nat (n::l) (insert n l'). 
-Proof. 
-  induction 1; intro n. 
-  - 
-  induction l; simpl in *. 
-  - constructor.  
-  - destruct( nat_le_bool n a). 
-    + constructor.  
-    + destruct l.
-      * simpl; repeat econstructor; eauto. 
-      * { econstructor.    
-        -  
-
-
-  
-Admitted. 
+Proof. Admitted. 
 
 Theorem sort_perm : forall l, perm nat l (sort l). 
 Proof. 
