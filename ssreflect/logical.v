@@ -19,16 +19,21 @@ Qed.
 
 Variables A B C : Prop .
 
-Lemma AndOrDistL : (A /\ B) \/ (B /\ C) <-> (A \/ B) /\ C.
+Lemma AndOrDistL : (A /\ C) \/ (B /\ C) <-> (A \/ B) /\ C.
 
 Proof. 
 rewrite /iff.
 apply: conj.
--case.
- +case => AisTrue BisTrue. 
-by apply: conj; [apply  or_introl  | ].
- +case=> BisTrue CisTrue.
-  by apply: conj; ]apply: or_intror | ].
+- case.
+  + case => AisTrue BisTrue. 
+  by apply: conj; [apply  or_introl | ].
+  + case=> BisTrue CisTrue.
+  by apply: conj; [apply: or_intror | ].
+- tauto.   
+Qed. 
+
+
+
 
 
 

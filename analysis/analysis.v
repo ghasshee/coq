@@ -1,4 +1,4 @@
-From mathcomp Require Import ssreflect. 
+From mathcomp Require Import ssreflect.
 Require Import Reals.
 Require Import Fourier. 
 Require Import Coq.Sets.Ensembles. 
