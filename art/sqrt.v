@@ -120,10 +120,11 @@ Search (well_founded lt).
 
 Open Scope nat. 
 
-Definition sqrt_type (n:nat)        := {s & {r | n = s*s+r /\ n < (s+1)*(s+1) } } .  
-Definition sqrt_type' (n s:nat)     :=      {r | n = s*s*r /\ n < (s+1)*(s+1) }   .  
-Definition sqrt_type'' (n s r:nat)  :=           n = s*s*r /\ n < (s+1)*(s+1)     .  
-
+Definition sqrt_type (n:nat)        := {s & {r | n = s*s+r /\ n < (S s)*(S s) } } .  
+(*
+    Definition sqrt_type' (n s:nat)     :=      {r | n = s*s+r /\ n < (s+1)*(s+1) }   .  
+    Definition sqrt_type'' (n s r:nat)  :=           n = s*s+r /\ n < (s+1)*(s+1)     .  
+ *)
 Definition sqrt_WF : 
   forall x, (forall y, y < x -> sqrt_type y) -> sqrt_type x. 
 Proof. 
@@ -131,21 +132,21 @@ Proof.
   - intros. exists 0, 0. now compute. 
   - destruct (div (S x) 4) as [q [r0 [H1 H2]]]; auto with zarith. 
     + destruct (H q) as [s' [r' [H1' H2']]]; auto with zarith.  
-      * { case (le_gt_dec (4*s'+1) (4*r'+r0)).   
-        - intros. exists (2*s'+1), (4*r'+r0-4*s'-1). auto with zarith.            
-        - intros. exists (2*s'  ), (4*r'+r0       ). auto with zarith. }
-Defined.  
+      * { case (le_lt_dec (S(4*s')) (4*r'+r0)).   
+        - intros. exists (S(2*s')), (4*r'+r0-4*s'-1). auto with zarith.            
+        - intros. exists (2*s'   ), (4*r'+r0       ). auto with zarith. }
+Qed. 
 
+Check le_lt_dec. 
 
-
-
-Definition sqrt : forall n:nat, {s & { r | n = s*s+r /\ n < (s+1)*(s+1) }} :=
+Definition sqrt : forall n:nat, {s & { r | n = s*s+r /\ n < (S s)*(S s) }} :=
   well_founded_induction lt_wf sqrt_type sqrt_WF. 
 
 Eval compute in  match sqrt 10 with 
-  existT _ s (exist _ r _ ) => (s,r) end. 
+  existT _ s _ => s end. 
   
-
+Eval compute in match div 1000 13 _ with 
+    existT _ s _ => s end. 
 
 Compute sqrt_bin 2000000000000000000000000.  
 

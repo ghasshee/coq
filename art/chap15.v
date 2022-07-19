@@ -417,12 +417,20 @@ Check plus_assoc.
 Definition div_type (m:nat) := 
   forall n , 0 < n -> {q & { r | m = q*n+r /\ r < n }}. 
 
+Definition sqrt_type (n:nat) := {s & { r | n = s*s+r /\ n < (S s)*(S s) }}. 
+
 Definition div_type' m n q :=
   {r | m = q * n+r /\ r < n }. 
 
+Definition sqrt_type' n s := 
+  { r | n = s*s+r /\ n < (S s)*(S s) }. 
+
 Definition div_type'' m n q r := m = q * n + r /\ r < n. 
 
+Definition sqrt_type'' n s r := n = s*s+r /\ n < (S s)*(S s).  
+
 Check Acc_inv_dep. 
+
 
 Definition div_F : 
   forall x, (forall y, y < x -> div_type y) -> div_type x. 
@@ -439,9 +447,40 @@ Proof.
   unfold div_type'' ; lia. 
 Defined.  
 
-
 Definition div : forall m n, 0 < n -> {q & {r | m = q*n+r /\ r < n }} :=
   well_founded_induction lt_wf div_type div_F. 
+
+
+Definition sqrt_F : 
+  forall x, (forall y, y < x -> sqrt_type y) -> sqrt_type x. 
+Proof. 
+  destruct x. 
+  refine (fun sqrt_rec => existT _ 0 (exist _ 0 _ )); auto with arith.  
+  unfold sqrt_type at 2. 
+  refine (fun sqrt_rec => 
+    let n := S x in 
+    match div n 4 _ with 
+    | existT _ q (exist _ r0 _ ) => 
+        match sqrt_rec q _ with 
+        | existT _ s' (exist _ r' H_spec) => 
+            match le_gt_dec (S(4*s')) (4*r'+r0) with 
+            | left HSs => 
+                let s := 2*s'+1 in 
+                let r := 4*r'+r0 - S(4*s') in 
+                existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ ) 
+            | right Hs => 
+                let s := 2*s' in 
+                let r := 4*r'+r0 in 
+                existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ )  end end end); 
+  unfold sqrt_type''; auto with zarith. 
+Qed. 
+
+Definition sqrt : forall n, {s & {r | n = s*s+r /\ n <(S s)*(S s)}} :=
+  well_founded_induction lt_wf sqrt_type sqrt_F. 
+
+Eval compute in 
+  match sqrt 10 with 
+  | existT _ s _ => s end . 
 
 
 Definition pos15 : 0 < 15 . lia. Defined. 
