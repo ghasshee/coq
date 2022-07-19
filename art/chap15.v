@@ -448,24 +448,24 @@ Definition sqrt_F :
   forall x, (forall y, y < x -> sqrt_type y) -> sqrt_type x. 
 Proof. 
   destruct x. 
-  refine (fun sqrt_rec => existT _ 0 (exist _ 0 _ )); lia. 
-  unfold sqrt_type at 2. 
-  refine (fun sqrt_rec => 
-    let n := S x in 
-    match div n 4 _ with 
-    | existT _ q (exist _ r0 _ ) => 
-        match sqrt_rec q _ with 
-        | existT _ s' (exist _ r' H_spec) => 
-            match le_gt_dec (S(4*s')) (4*r'+r0) with 
-            | left HSs => 
-                let s := 2*s'+1 in 
-                let r := 4*r'+r0 - S(4*s') in 
-                existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ ) 
-            | right Hs => 
-                let s := 2*s' in 
-                let r := 4*r'+r0 in 
-                existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ )  end end end); 
-  unfold sqrt_type''; auto with zarith. 
+  - refine (fun sqrt_rec => existT _ 0 (exist _ 0 _ )); lia. 
+  - unfold sqrt_type at 2. 
+    refine (fun sqrt_rec => 
+      let n := S x in 
+      match div n 4 _ with 
+      | existT _ q (exist _ r0 _ ) => 
+          match sqrt_rec q _ with 
+          | existT _ s' (exist _ r' H_spec) => 
+              match le_gt_dec (S(4*s')) (4*r'+r0) with 
+              | left HSs => 
+                  let s := S(2*s') in 
+                  let r := 4*r'+r0 - S(4*s') in 
+                  existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ ) 
+              | right Hs => 
+                  let s := 2*s' in 
+                  let r := 4*r'+r0 in 
+                  existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ )  end end end); 
+    unfold sqrt_type''; auto with zarith. 
 Defined. 
 
 Definition sqrt : forall n, {s & {r | n = s*s+r /\ n <(S s)*(S s)}} :=
@@ -487,11 +487,12 @@ Proof.
   destruct x. 
   - intros. exists 0. exists 0. auto with arith.  
   - intros sqrt_rec. set (S x) as n. fold n. 
-    destruct (div n 4) as [q [r0 [H1 H2]]]; auto with zarith. 
+    refine (match div n 4 _ with 
+            | existT _ q (exist _ r0 _) => _ end ); auto with zarith. 
     + destruct (sqrt_rec q) as [s' [r' [H1' H2']]]; auto with zarith.  
-      * { case (le_lt_dec (S(4*s')) (4*r'+r0)).   
-        - intros. exists (S(2*s')), (4*r'+r0-4*s'-1). auto with zarith.            
-        - intros. exists (2*s'   ), (4*r'+r0       ). auto with zarith. }
+      * { destruct (le_gt_dec (S(4*s')) (4*r'+r0)).   
+        - exists (S(2*s')); exists (4*r'+r0-S(4*s')); auto with zarith.            
+        - exists (2*s'   ); exists (4*r'+r0        ); auto with zarith. }
 Defined.  
 
 Definition sqrt' : forall n:nat, {s & { r | n = s*s+r /\ n < (S s)*(S s) }} :=
