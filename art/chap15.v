@@ -414,23 +414,17 @@ Check sigT.
 Check le_plus_minus. 
 Check plus_assoc. 
 
-Definition div_type (m:nat) := 
-  forall n , 0 < n -> {q & { r | m = q*n+r /\ r < n }}. 
+Definition div_type  (m:nat)  := forall n, 0<n -> {q & { r | m = q*n+r /\ r < n }}. 
 
-Definition sqrt_type (n:nat) := {s & { r | n = s*s+r /\ n < (S s)*(S s) }}. 
+Definition sqrt_type (n:nat)  := {s & { r | n = s*s+r /\ n < (S s)*(S s) }}. 
 
-Definition div_type' m n q :=
-  {r | m = q * n+r /\ r < n }. 
+Definition div_type' m n q    := { r | m = q*n+r /\ r < n }. 
+Definition sqrt_type' n s     := { r | n = s*s+r /\ n < (S s)*(S s) }. 
 
-Definition sqrt_type' n s := 
-  { r | n = s*s+r /\ n < (S s)*(S s) }. 
-
-Definition div_type'' m n q r := m = q * n + r /\ r < n. 
-
-Definition sqrt_type'' n s r := n = s*s+r /\ n < (S s)*(S s).  
+Definition div_type'' m n q r := m = q*n+r /\ r < n. 
+Definition sqrt_type'' n s r  := n = s*s+r /\ n < (S s)*(S s).  
 
 Check Acc_inv_dep. 
-
 
 Definition div_F : 
   forall x, (forall y, y < x -> div_type y) -> div_type x. 
@@ -450,12 +444,11 @@ Defined.
 Definition div : forall m n, 0 < n -> {q & {r | m = q*n+r /\ r < n }} :=
   well_founded_induction lt_wf div_type div_F. 
 
-
 Definition sqrt_F : 
   forall x, (forall y, y < x -> sqrt_type y) -> sqrt_type x. 
 Proof. 
   destruct x. 
-  refine (fun sqrt_rec => existT _ 0 (exist _ 0 _ )); auto with arith.  
+  refine (fun sqrt_rec => existT _ 0 (exist _ 0 _ )); lia. 
   unfold sqrt_type at 2. 
   refine (fun sqrt_rec => 
     let n := S x in 
@@ -473,7 +466,7 @@ Proof.
                 let r := 4*r'+r0 in 
                 existT(sqrt_type' n) s (exist (sqrt_type'' n s) r _ )  end end end); 
   unfold sqrt_type''; auto with zarith. 
-Qed. 
+Defined. 
 
 Definition sqrt : forall n, {s & {r | n = s*s+r /\ n <(S s)*(S s)}} :=
   well_founded_induction lt_wf sqrt_type sqrt_F. 
@@ -482,14 +475,30 @@ Eval compute in
   match sqrt 10 with 
   | existT _ s _ => s end . 
 
-
-Definition pos15 : 0 < 15 . lia. Defined. 
-
-Eval lazy beta delta zeta iota in 
-        match div 100 15 pos15 with 
+Eval compute in 
+        match div 100 15 _ with 
         | existT _ q (exist _ r _ )   => (q,r) end . 
 
 
+(* ex. 15.11 *) 
+Definition sqrt_F' : 
+  forall x, (forall y, y < x -> sqrt_type y) -> sqrt_type x. 
+Proof. 
+  destruct x. 
+  - intros. exists 0. exists 0. auto with arith.  
+  - intros sqrt_rec. set (S x) as n. fold n. 
+    destruct (div n 4) as [q [r0 [H1 H2]]]; auto with zarith. 
+    + destruct (sqrt_rec q) as [s' [r' [H1' H2']]]; auto with zarith.  
+      * { case (le_lt_dec (S(4*s')) (4*r'+r0)).   
+        - intros. exists (S(2*s')), (4*r'+r0-4*s'-1). auto with zarith.            
+        - intros. exists (2*s'   ), (4*r'+r0       ). auto with zarith. }
+Defined.  
+
+Definition sqrt' : forall n:nat, {s & { r | n = s*s+r /\ n < (S s)*(S s) }} :=
+  well_founded_induction lt_wf sqrt_type sqrt_F'. 
+
+Eval compute in  match sqrt' 10 with 
+  existT _ s _ => s end. 
 
 
 
