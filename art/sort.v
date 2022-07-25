@@ -384,5 +384,5 @@ End merge_sort.
 
 Require Import Extraction. 
 
-Extraction "merge_sort.ml" merge. 
+Extraction "extract/merge_sort.ml" merge. 
 

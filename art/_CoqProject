@@ -5,6 +5,7 @@ chap05.v
 
 chap06.v
 prime.v
+log.v
 
 chap07.v
 ltac.v
@@ -16,9 +17,9 @@ hoare.v
 chap09.v
 fib.v
 
-chap10/chap10.v
-chap11/chap11.v
-chap12/chap12.v
+chap10.v
+chap11.v
+chap12.v
 chap13/chap13.v
 chap14/chap14.v
 

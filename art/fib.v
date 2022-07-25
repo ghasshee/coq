@@ -29,13 +29,10 @@ Compute fib  10.
 Compute fib' 10.
 
 Theorem fib_fib'_aux : forall n, (fib n, fib (S n)) = fib' n .
-Proof. 
-    induction n using nat_2_ind; intuition. 
-    - simpl fib'. now rewrite <- IHn. 
-Qed.  
+Proof. induction n using nat_2_ind; simpl; try rewrite <- IHn; reflexivity. Qed.  
 
 Theorem fib_fib' : forall n, fib n = fst (fib' n) . 
-Proof. intros. rewrite <- fib_fib'_aux; intuition. Qed. 
+Proof. intros; rewrite <- fib_fib'_aux; reflexivity. Qed. 
 
 
 
@@ -43,15 +40,15 @@ Proof. intros. rewrite <- fib_fib'_aux; intuition. Qed.
 
 (* ex. 9.10 *) 
 Opaque fib. 
-Lemma fib0 : fib 0 = 1. intuition. Qed. 
-Lemma fib1 : fib 1 = 1. intuition. Qed. 
-Theorem fib_eq : forall n, fib(S(S n)) = fib n + fib(S n). induction n; intuition. Qed.  
+Theorem fib0    :           fib 0       = 1 .               Proof. intuition. Qed. 
+Theorem fib1    :           fib 1       = 1 .               Proof. intuition. Qed. 
+Theorem fib_eq  : forall n, fib(S(S n)) = fib n + fib(S n). Proof. intuition. Qed.  
 
-Hint Resolve fib0 fib1 fib_eq : fib. 
+Hint Rewrite fib0 fib1 fib_eq : fib. 
 
 Theorem nat_1_2_ind : forall P : nat -> Prop, 
     P 0 -> P 1 -> (forall n, P n -> P(S n) -> P(S(S n))) -> forall n, P n. 
-Proof. intros. cut (P n /\ P(S n)); try tauto. induction n;intuition. Qed. 
+Proof. intros. cut(P n /\ P(S n)); try induction n; intuition. Qed. 
 
 Require Import Lia. 
 Theorem fib_lemma'   : forall n p, fib(2+n+p) = fib(1+n) * fib(1+p) + fib n * fib p . 
@@ -59,8 +56,8 @@ Proof.
     simpl. induction n using nat_1_2_ind; intro p. 
     - Transparent fib. simpl. lia.   
     - Transparent fib. simpl. lia. 
-    - Opaque fib. simpl. simpl in IHn0.  
-      rewrite fib_eq, IHn, IHn0. repeat rewrite fib_eq.    
+    - Opaque fib. simpl in *.  
+      rewrite fib_eq, IHn, IHn0. repeat rewrite fib_eq.   
       lia.  
 Qed. 
 Theorem fib_lemma : forall n p, fib(n+p+2) = (fib(n+1)) * (fib(p+1)) + (fib n)*(fib p) . 
@@ -71,41 +68,6 @@ Proof.
     cutrewrite (p+1  =1+p  ); [| lia ]. 
     apply fib_lemma'.    
 Qed. 
-
-Lemma quad_a_b : forall a b:nat, (a+b)*(a+b) = a*a + b*b + 2*a*b. 
-Proof. lia. Qed.  
-Lemma distrib_r : forall a b c, (a+b)*c = a*c + b*c . Proof. lia. Qed. 
-Lemma distrib_l : forall c a b, c*(a+b) = c*a + c*b . Proof. lia. Qed. 
-Lemma plus_0 : forall a:nat, a+0 = a.                 Proof. lia. Qed. 
-Lemma mult_2 : forall a:nat, a+a = 2*a.               Proof. lia. Qed. 
-Lemma plus_comm : forall n m:nat, n+m = m+n.          Proof. lia. Qed. 
-
-Hint Resolve 
-    quad_a_b plus_0 mult_2 distrib_r distrib_l : fib. 
-
-
-Opaque fib. 
-
-Theorem fib_lemma_2n : forall n , 
-  fib (2*n) = 2 * fib n * fib n + fib(n+1)*fib(n+1) - 2 * fib n * fib(n+1).
-Proof.
-  induction n. 
-  - now simpl. 
-  - set (fib_lemma n n).  
-    simpl in e.   
-    cutrewrite (2*S n= n+n+2); [| lia ].
-    cutrewrite (fib(S n+1) = fib n + fib (S n)); [| rewrite <- fib_eq, plus_comm; auto ]. 
-    rewrite e. simpl.    
-    cutrewrite ((fib n + fib(S n))*(fib n + fib(S n)) 
-    = fib n*fib n + fib(S n)*fib(S n) + 2 * fib n * fib(S n)); [| now rewrite quad_a_b]. 
-    simpl. eauto with arith.   
-    repeat rewrite plus_0. 
-    cutrewrite (n+1 = S n); [| lia ].  
-    repeat rewrite mult_2. 
-    cutrewrite (2*fib(S n)*(fib n + fib(S n)) = 2*fib(S n)*fib(S n) + 2*fib n * fib(S n)); [| lia]. 
-    lia. 
-Qed. 
-
 
 
 
@@ -118,7 +80,7 @@ Fixpoint fib''_aux n a b :=
 
 Definition fib'' n := fib''_aux n 1 1 . 
 
-Compute fib'' 10. 
+Compute fib'' 5. 
 
 
 
@@ -135,28 +97,79 @@ Fixpoint fib_bin_aux (n:positive) : nat * nat :=
                 (2*un1*un - un*un, un1*un1 + un*un) end . 
 
 Definition fib_bin (n:positive) := fst (fib_bin_aux n) . 
-Compute fib_bin 10.          
 
 
 Check Pos2Nat.inj_xI. 
 Check Pos2Nat.inj_xO. 
 Print Pos.to_nat. 
-Print Pos.iter_op. 
+Print Pos.of_nat. 
+Print nat_of_P. 
 
-Theorem fib_bin_eq : forall n, fib_bin (n+2) = fib_bin n + fib_bin (n+1). 
+
+Let comm := Nat.add_comm. 
+
+Theorem fib_lemma_2n : forall n , 
+  fib (2*n) = 2*fib n*fib n + fib(n+1)*fib(n+1) - 2*fib n*fib(n+1).
+Proof.
+  destruct n. 
+  - reflexivity. 
+  - cutrewrite ( 2*S n = n+n+2 ); 
+    [ rewrite(fib_lemma n n),(comm _ 1),(comm _ 1); simpl;  rewrite fib_eq | ]; 
+    auto with zarith.   
+Qed. 
+
+Theorem fib_lemma_2n_1 : forall n, 
+  fib (2*n+1) = 2*fib(n+1)*fib n - fib n*fib n. 
 Proof. 
-    induction n using positive_2_ind; intuition . 
+  destruct n. 
+  - reflexivity. 
+  - cutrewrite (2*S n+1 = S n+n+2); 
+    [ rewrite(fib_lemma(S n)n),(comm _ 1),(comm _ 1); simpl;  rewrite fib_eq | ]; 
+    auto with zarith.  
+Qed. 
 
-Search (nat -> positive). 
-Abort. 
+Theorem fib_lemma_2n_2 : forall n, 
+  fib (2*n+2) = fib(n+1)*fib(n+1) + fib n*fib n. 
+Proof. 
+  intros n; cutrewrite(2*n+2=n+n+2); try rewrite(fib_lemma n n); auto with zarith. 
+Qed. 
 
-Definition fib_bin_spec : forall n, { u:nat & { u':nat | u = fib n /\ u' = fib (n+1) }} . 
-    intros. 
-    exists (fib_bin (Pos.of_nat n)). 
-    exists (fib_bin (Pos.of_nat (n+1))). 
-    split; induction n using nat_1_2_ind; intuition.  
-    - rewrite fib_eq. rewrite <- IHn, <- IHn0. 
-Abort. 
+
+Compute fib 1. 
+Compute fib 2. 
+
+Definition fib_bin_spec : forall p:positive, 
+  { u:nat & { v:nat | u = fib(nat_of_P p) /\ v = fib(nat_of_P p + 1) }}. 
+Proof. 
+  refine (fix fib_bin p := match p with 
+                           | xI p => match fib_bin p with 
+                                     | existT _ u (exist _ v _) => _ end
+                           | xO p => match fib_bin p with 
+                                     | existT _ u (exist _ v _) => _ end
+                           | xH   => _ end). 
+  - exists (2*u*v - u*u), (v*v + u*u). 
+    subst; split.  
+    + cutrewrite (Pos.to_nat p~1 = 2*nat_of_P p + 1);
+      [ rewrite fib_lemma_2n_1 |]; auto with zarith. 
+    + cutrewrite (Pos.to_nat p~1+1 = 2*Pos.to_nat p + 2);  
+      [ rewrite fib_lemma_2n_2 |]; auto with zarith. 
+  - exists (2*u*u+v*v-2*u*v), (2*u*v-u*u). 
+    subst; split.  
+    + cutrewrite (Pos.to_nat p~0 = 2*nat_of_P p); 
+      [ rewrite fib_lemma_2n |];  auto with zarith.      
+    + cutrewrite (Pos.to_nat p~0+1 = 2*Pos.to_nat p+1); 
+      [ rewrite fib_lemma_2n_1 |]; auto with zarith. 
+  - Transparent fib. compute.  
+    exists 1,2.   
+    split; reflexivity. 
+Defined. 
+    
+Compute 
+  match fib_bin_spec 21 with 
+  | existT _ u (exist _ v _ ) => (u,v) end. 
+        
+
+    
 
 Check Z.of_nat. 
 Check Z.to_nat. 

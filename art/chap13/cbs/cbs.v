@@ -123,11 +123,11 @@ Section Process.
           intros. 
           inversion H1.    
           apply H7.
-          - change ((fun cw : sigS Signal  => 
-            let (c,w) := cw in p=(!w)c=>q) (existS _ c w1)). 
+          - change ((fun cw : sigT Signal  => 
+            let (c,w) := cw in p=(!w)c=>q) (existT _ c w1)). 
             now dependent rewrite H3. 
-          - change ((fun cw : sigS Signal  => 
-            let (c,w) := cw in ~ P p (w ::: s)) (existS _ c w1)).  
+          - change ((fun cw : sigT Signal  => 
+            let (c,w) := cw in ~ P p (w ::: s)) (existT _ c w1)).  
             now dependent rewrite H3. 
         Qed. 
 
@@ -137,8 +137,8 @@ Section Process.
           intros. 
           inversion H0. subst.
           apply H6. 
-          change (( fun cw : sigS Signal => 
-                  let (c,w) := cw in p=(!w)c=>q ) (existS _ c w1)). 
+          change (( fun cw : sigT Signal => 
+                  let (c,w) := cw in p=(!w)c=>q ) (existT _ c w1)). 
           now dependent rewrite H2. 
         Qed. 
 

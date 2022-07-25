@@ -7,6 +7,17 @@ Inductive Z_btree : Set :=
     | Z_bnode   : Z -> Z_btree -> Z_btree -> Z_btree . 
 
 
+Definition Figure_11_1 := 
+  Z_bnode 10 
+    (Z_bnode 8 
+      (Z_bnode 7 Z_leaf Z_leaf)
+      (Z_bnode 9 Z_leaf Z_leaf))
+    (Z_bnode 15
+      (Z_bnode 13 Z_leaf Z_leaf)
+      (Z_bnode 19 
+        Z_leaf
+        (Z_bnode 27 Z_leaf Z_leaf))) . 
+
 Inductive occ (n:Z) : Z_btree -> Prop := 
     | occ_root  : forall t1 t2,   occ n (Z_bnode n t1 t2)
     | occ_l     : forall p t1 t2, occ n t1 -> occ n (Z_bnode p t1 t2)
@@ -22,9 +33,9 @@ Definition naive_occ_dec : forall n t, {occ n t} + {~ occ n t} .
           + (* n == z *) induction 1; left. constructor.  
           + (* n <> z *) case IHt1. 
               * (* t1 == Z_bnode n _ _ *) intro occ1. left. now constructor.  
-              * (* t1 <> Z_bnode n _ _ *) intros nocc1 neq. case IHt2. 
-                --  (* t2 == Z_bnode n _ _ *) intro occ2. left. now constructor.   
-                --  (* No n occurs in next level *) intro nocc2. right. inversion 1; auto. 
+              * (* t1 <> Z_bnode n _ _ *) intros nocc1 neq. { case IHt2. 
+                -  (* t2 == Z_bnode n _ _ *) intro occ2. left. now constructor.   
+                -  (* No n occurs in next level *) intro nocc2. right. inversion 1; auto. }
 Defined. 
      
 Require Import Extraction. 

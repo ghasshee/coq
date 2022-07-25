@@ -458,7 +458,7 @@ Fixpoint value_present (n:Z) (bt:Z_btree) :  bool :=
 
 
 (* ex 6.26 *) 
-(* ==> see discrete_log.v *) 
+(* ==> see log.v *) 
 
 
 

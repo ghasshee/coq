@@ -1,4 +1,4 @@
-
+Require Import ZArith. 
 
 (* ex. 6.26 *) 
 Fixpoint discrete_log (n:positive) : nat := 

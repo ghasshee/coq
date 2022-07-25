@@ -1,0 +1,65 @@
+DIGEST ddd18e8757fda77d7999dbeb3e1db3c6
+Fwhy
+R15:20 Coq.ZArith.ZArith <> <> lib
+constr 47:54 <> mk_tuple
+rec 32:36 <> tuple
+proj 58:58 <> b
+proj 66:66 <> x
+R60:63 Coq.Init.Datatypes <> bool ind
+R68:68 Coq.Numbers.BinNums <> Z ind
+def 300:314 <> b_false_seq_x_1
+R330:334 why <> tuple rec
+binder 328:328 <> t:4
+R356:360 why <> tuple rec
+binder 353:354 <> t':5
+R365:372 why <> mk_tuple constr
+R375:375 why <> b proj
+R377:378 why <> t':5 var
+R403:407 why <> tuple rec
+binder 399:401 <> t'':6
+R412:419 why <> mk_tuple constr
+R421:425 Coq.Init.Datatypes <> false constr
+R428:428 why <> x proj
+R430:432 why <> t'':6 var
+R436:436 why <> t:4 var
+R761:768 Coq.ZArith.Zbool <> Zgt_bool syndef
+R799:807 Coq.ZArith.Zbool <> Zgt_cases thm
+def 825:833 <> Zgt_bool'
+R848:848 Coq.Numbers.BinNums <> Z ind
+binder 844:844 <> x:7
+binder 846:846 <> y:8
+R851:851 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R870:874 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R895:895 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R864:865 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R852:859 Coq.ZArith.Zbool <> Zgt_bool syndef
+R861:861 why <> x:7 var
+R863:863 why <> y:8 var
+R866:869 Coq.Init.Datatypes <> true constr
+R887:889 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R875:882 Coq.ZArith.Zbool <> Zgt_bool syndef
+R884:884 why <> x:7 var
+R886:886 why <> y:8 var
+R890:894 Coq.Init.Datatypes <> false constr
+R923:930 Coq.ZArith.Zbool <> Zgt_bool syndef
+R923:930 Coq.ZArith.Zbool <> Zgt_bool syndef
+R974:984 Coq.Wellfounded.Wellfounded <> <> lib
+R995:997 Coq.ZArith.Zwf <> <> lib
+R1023:1025 Coq.ZArith.Zwf <> Zwf def
+R1035:1050 Coq.ZArith.Zwf <> Zwf_well_founded thm
+R1060:1075 Coq.Wellfounded.Inverse_Image <> wf_inverse_image thm
+def 1092:1097 <> loop1'
+R1117:1121 why <> tuple rec
+binder 1113:1113 <> t:9
+R1124:1124 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1167:1171 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1135:1139 why <> tuple rec
+binder 1132:1133 <> t1:10
+R1158:1161 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1142:1144 Coq.ZArith.Zwf <> Zwf def
+R1148:1148 why <> x proj
+R1150:1151 why <> t1:10 var
+R1154:1154 why <> x proj
+R1156:1156 why <> t:9 var
+R1162:1166 why <> tuple rec
+R1172:1176 why <> tuple rec

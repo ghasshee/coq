@@ -1,0 +1,4 @@
+
+type sumbool =
+| Left
+| Right
