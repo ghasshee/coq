@@ -2,8 +2,6 @@
 
 
 
-
-
 Require Import Arith Lia. 
 (* 15.1 Bounded Recursion *)
 
@@ -764,20 +762,6 @@ Qed.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
 
 
 Require Import Recdef.   

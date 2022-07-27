@@ -97,7 +97,7 @@ End perm.
 
 
 
-Search ( { _ = _ } + { _ <> _ } ). 
+(* Search ( { _ = _ } + { _ <> _ } ). *)
 
 (* ex 9.5 *) 
 Fixpoint occ l n := 

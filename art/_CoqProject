@@ -1,6 +1,9 @@
 -R ./ CoqArt
 
-## mathcomp
+chap01.v
+chap02.v
+chap03.v
+chap04.v
 chap05.v
 
 chap06.v
@@ -11,6 +14,7 @@ chap07.v
 ltac.v
 
 chap08.v
+paren.v
 JMeq.v 
 hoare.v
 
@@ -20,10 +24,11 @@ fib.v
 chap10.v
 chap11.v
 chap12.v
-chap13/chap13.v
-chap14/chap14.v
+chap13.v
+chap14.v
 
 chap15.v
+sort.v
 sqrt.v
 
 chap16.v

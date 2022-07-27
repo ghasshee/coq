@@ -282,8 +282,7 @@ Proof.
   induction k1; simpl; intros.  
   - right. now exists l1, k2.  
   - destruct l1; simpl in *. 
-    + 
-
+Abort. 
 
 Lemma wp_o_c_middle : forall l l1 l2, wp l -> l = l1 ++ l2 -> wp(l1++open::close::l2). 
 Proof. 
@@ -293,34 +292,14 @@ Proof.
   - cut (open :: close :: l2 = open :: [] ++ close :: l2); auto with paren.   
     intros. rewrite H.   
     now (destruct l1; destruct l2; repeat constructor).    
-  -  
+Abort. 
 
 Lemma wp_l_o_c_l'_wp_l_l' : forall l l', wp(l++open::close::l') -> wp (l ++ l'). 
 Proof. 
-  intros. revert l l'. 
-  apply wp_wp' in H. apply wp'_wp.   
-  inversion H. 
-  + 
   intros l l'; generalize l; induction l'; simpl; intros. 
   - rewrite app_nil_r. now apply wp_l_o_c_wp_l.  
   - rewrite app_cons. 
     apply IHl'.  
-
-    induction l0; simpl in *. 
-    + destruct a.  
-      * 
-    + apply wp_o_c_l_wp_l in H.  
-      destruct a. 
-      *   
-
-
-
-  - induction l0; simpl in *.  
-    + now apply wp_o_c_l_wp_l.  
-    + 
-
-
-
 Abort. 
 
 Lemma cons_wp_false : forall a l, wp l -> wp(a::l) -> False. 
@@ -393,7 +372,7 @@ Proof.
       * rewrite <- opens_open. 
 
 
-
+Restart. 
     intros n l. generalize n. clear n. 
     induction l.  
     - simpl. intros. constructor; try constructor.   

@@ -1,8 +1,7 @@
 Require Import Arith ZArith . 
 
-Search Z.le. 
-
-Search le .
+Check Z.le. 
+Check le .
 
 (* Minimal Polymorphic Propositional Logic *) 
 (* == Minimal Logic + ∀ + ∃ *) 

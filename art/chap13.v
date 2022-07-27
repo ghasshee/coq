@@ -1135,15 +1135,16 @@ Section LTL.
   Definition G_Infinite P := Eventually (Always P). 
 
 
+
+  (* ex 13.29 *) 
   Theorem Eventually_of_LAppend : forall P(u v:LList A), 
     Finite u -> satisfies v (Eventually P) -> satisfies (LAppend u v) (Eventually P). 
   Proof. 
     unfold satisfies; induction 1; intros; 
     autorewrite with llists using auto with llists. 
   Qed. 
-
-
   (* ex 13.29 is solved at the next section *) 
+
 
   (* ex 13.30 *) 
   Theorem Always_Infinite : forall P (l:LList A) , Always P l -> Infinite l.  

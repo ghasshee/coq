@@ -512,7 +512,6 @@ Fixpoint n_sum_all_values (n:nat)(t:Z_inf_branch_tree) {struct t} : Z :=
 
 
 (* ex 6.28 *)
-Search ( bool -> bool -> bool ). 
 Print andb . 
 
 Fixpoint n_zero_present (n:nat) (t:Z_inf_branch_tree) : bool :=
@@ -579,7 +578,7 @@ Lemma mult2n_n_plus_n : forall n : nat, (mult2 n) = n + n .
 Proof. 
     induction n; simpl.
     - trivial.  
-    - Search S (_ + _) . 
+    - (*Search S (_ + _) . *)
       now rewrite IHn, plus_n_Sm. 
 Qed. 
 
@@ -608,10 +607,10 @@ Qed.
 Theorem n_le_sum_n : forall n:nat, n <= sum_n n . 
 Proof.
     induction n; try trivial . 
-    - Search (_<=_ -> _<=_+_). 
+    - (* Search (_<=_ -> _<=_+_). *)
       rewrite sum_succ, (plus_n_O (S n)) at 1. 
       apply plus_le_compat_l. 
-      Search (_<=_ -> _<=_ -> _<=_) . 
+      (* Search (_<=_ -> _<=_ -> _<=_) . *)
       apply (le_trans 0 n _); [now apply le_0_n | trivial] . 
 Qed.
 
@@ -626,7 +625,7 @@ Check nat_rect.
 (* 6.4.1 Polymorphic Lists *) 
 Require Import List. 
 Import ListNotations. 
-Print List. 
+(* Print List.  *)
 Print list. 
 
 (* ex 6.34 *) 

@@ -167,12 +167,12 @@ Proof.
   - split.  
     + split. 
       * { split . 
-          - trivial . 
-          - trivial . }
+          - exact I.  
+          - exact I. }
       * trivial . 
     + trivial. 
   - assert True. 
-    + { trivial } .  
+    + reflexivity.     
     + assumption . 
 Qed. 
 
